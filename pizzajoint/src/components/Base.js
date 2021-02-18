@@ -7,9 +7,9 @@ const Base = ({ addBase, pizza }) => {
 
   return (
     <motion.div className="base container"
-      initial={{x: '100vw'}}
-      animate={{x: 0}}
-      transition={{type: 'spring', delay: 0.5}}
+      initial={{ x: '100vw' }}
+      animate={{ x: 0 }}
+      transition={{ type: 'spring', delay: 0.5 }}
     >
 
       <h3>Step 1: Choose Your Base</h3>
@@ -18,7 +18,7 @@ const Base = ({ addBase, pizza }) => {
           let spanClass = pizza.base === base ? 'active' : '';
           return (
             <li key={base} onClick={() => addBase(base)}>
-              <span className={spanClass}>{ base }</span>
+              <span className={spanClass}>{base}</span>
             </li>
           )
         })}
@@ -31,7 +31,14 @@ const Base = ({ addBase, pizza }) => {
           transition={{ type: 'spring', stiffness: 120 }}
         >
           <Link to="/toppings">
-            <button>Next</button>
+            <motion.button whileHover={{
+              scale: 1.1,
+              textShadow: '0px 0px 8px rgb(255, 255, 255)',
+              boxShadow: '0px 0px 8px rgb(255, 255, 255)'
+
+            }}>
+              Next
+            </motion.button>
           </Link>
         </motion.div>
       )}
