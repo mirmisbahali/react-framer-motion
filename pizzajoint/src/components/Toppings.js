@@ -14,7 +14,8 @@ const Toppings = ({ addTopping, pizza }) => {
           let spanClass = pizza.toppings.includes(topping) ? 'active' : '';
           return (
             <motion.li key={topping} onClick={() => addTopping(topping)}
-              whileHover={{ scale: 1.3, color: '#fae112' }}
+              whileHover={{ scale: 1.3, originX: 0, color: '#f8e112' }}
+              transition={{ type: 'spring', stiffness: 300 }}
             >
               <span className={spanClass}>{topping}</span>
             </motion.li>
