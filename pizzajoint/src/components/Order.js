@@ -17,6 +17,10 @@ const containerVariants = {
       when: "beforeChildren",
       staggerChildren: 0.4
     }
+  },
+  exit: {
+    x: '-100vw',
+    transition: { ease: 'easeInOut' }
   }
 
 }
@@ -43,6 +47,7 @@ const Order = ({ pizza }) => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      exit="exit"
     >
       <AnimatePresence>
         {showTitle && (
